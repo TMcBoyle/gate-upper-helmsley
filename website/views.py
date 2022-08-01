@@ -14,7 +14,8 @@ def councillors(request: HttpRequest):
     return render(request, 'councillors.dj.html', {'councillors': list(councillors.values())})
 
 def documents(request: HttpRequest):
-    return render(request, 'documents.dj.html')
+    documents = models.Document.objects.filter(hide=False)
+    return render(request, 'documents.dj.html', {'documents': list(documents.values())})
 
 def contact(request: HttpRequest):
     contacts = models.Person.objects.filter(contact=True)

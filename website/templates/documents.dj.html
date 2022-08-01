@@ -14,25 +14,11 @@
             <th>Document</th>
             <th>Date Uploaded</th>
         </tr>
+        {% for document in documents %}
         <tr>
-            <td><a href="documents">Financial Document July</a></td>
-            <td>1st August 2022</td>
+            <td><a href="{{document.file}}" download>{{document.description}}</a></td>
+            <td>{{document.uploaded.date}}</td>
         </tr>
-        <tr>
-            <td><a href="documents">Financial Document June</a></td>
-            <td>3rd July 2022</td>
-        </tr>
-        <tr>
-            <td><a href="documents">Financial Document May</a></td>
-            <td>2nd June 2022</td>
-        </tr>
-        <tr>
-            <td><a href="documents">Financial Document April</a></td>
-            <td>11th May 2022</td>
-        </tr>
-        <tr>
-            <td><a href="documents">Financial Document March</a></td>
-            <td>9th April 2022</td>
-        </tr>
+        {% endfor %}
     </table>
 {% endblock %}

@@ -81,6 +81,10 @@ DATABASES = {
     }
 }
 
+# Documents
+
+MEDIA_URL = 'documents/'
+MEDIA_ROOT = 'D:/Programming/Projects/gate-upper-helmsley/documents/'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
