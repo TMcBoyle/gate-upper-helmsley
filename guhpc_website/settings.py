@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-05svav5qv-yazdtznldcv8v35cf*qt&1be949(&%-@)%y&mh2q
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'gate-upper-helmsley.herokuapp.com']
-
+CSRF_TRUSTED_ORIGINS = ['gate-upper-helmsley.herokuapp.com']
 
 # Application definition
 
