@@ -1,0 +1,181 @@
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-y: scroll;
+}
+
+body {
+    padding: 20px;
+}
+
+.title {
+    margin: auto;
+    text-align: center;
+    color: #002106;
+    background-color: lightgray;
+    font-size: 72px;
+    font-weight: normal;
+    padding-bottom: 10px;
+}
+
+.header-text {
+    color: #002106;
+    font-weight: normal;
+    font-size: 36px;
+}
+
+.header-small {
+    color: #002106;
+    font-weight: normal;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.form-label {
+    color: #002106;
+    font-weight: normal;
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.form-label-small {
+    color: #002106;
+    font-weight: normal;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.basic-table th {
+    color: #002106;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: left;
+}
+
+.basic-table tr {
+    color: #000000;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: left;
+}
+
+.basic-table td {
+    padding: 10px 60px 10px 0px;
+    text-align: left;
+    min-width: 30px;
+}
+
+.basic-table a {
+    color: #002106;
+}
+
+.dark-button {
+    background-color: #002106;
+    color: lightgray;
+    border-style: none;
+    border-radius: 25%;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.dark-button:hover {
+    background-color: #003a0b;
+}
+
+.centered {
+    margin: auto;
+    text-align: center;
+}
+
+.container-horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.container-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.navigation-link {
+    margin-top: 10px;
+    background-color: lightgray;
+    color: white;
+    text-decoration: none;
+    flex: 1;
+    text-align: center;
+    font-size: 32px;
+    padding: 10px;
+}
+
+.navigation-link:hover {
+    text-decoration: underline;
+}
+
+.navigation-link-current {
+    color: #002106;
+    text-decoration: underline;
+}
+
+#splash-image-container {
+    margin: auto;
+    object-fit: cover;
+}
+
+.splash {
+    margin-left: auto;
+}
+
+.dropdown {
+    height: 100%;
+    background-color: white;
+    border-style: solid;
+    border-color: #002106;
+    font-size: 20px;
+    font-stretch: condensed;
+}
+
+.contact-form input {
+    min-width: 240px;
+    font-size: 16px;
+    margin-left: auto;
+}
+
+.contact-form textarea {
+    min-width: 240px;
+    margin-left: auto;
+    font-size: 16px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.contact-form .container-horizontal {
+    margin-bottom: 10px;
+}
+
+.contact-form #message {
+    min-height: 80px;
+}
+
+.spaced {
+    justify-content: space-between;
+}
+
+#general-enquiries {
+    margin-right: 50px;
+}
+
+#welcome {
+    min-width: 480px;
+    flex-grow: 1;
+}
+
+#map {
+    margin: 10px;
+    height: 360px;
+    width: 480px;
+    outline: 2px solid #002106;
+    outline-offset: 10px;
+}

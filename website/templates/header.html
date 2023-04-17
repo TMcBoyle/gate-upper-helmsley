@@ -1,0 +1,42 @@
+<h1 class="title">Gate and Upper Helmsley Parish Council</h1>
+<div>
+    <nav class="container-horizontal">
+        <a 
+            class="navigation-link
+                {% if request.path == '/' %}
+                    navigation-link-current
+                {% endif %}"
+            href="/"
+        >
+            Home
+        </a>
+        <a 
+            class="navigation-link
+                {% if request.path == '/councillors/' %}
+                    navigation-link-current
+                {% endif %}"
+            href="/councillors/"
+        >
+            Councillors
+        </a>
+        <a 
+            class="navigation-link
+                {% if request.path == '/documents/' %}
+                    navigation-link-current
+                {% endif %}"
+            href="/documents/"
+        >
+            Documents
+        </a>
+        <a 
+            class="navigation-link
+                {% if request.path == '/contact/' %}
+                    navigation-link-current
+                {% endif %}" 
+            href="/contact/"
+        >
+            Contact
+        </a>
+    </nav>
+</div>
+<hr/>

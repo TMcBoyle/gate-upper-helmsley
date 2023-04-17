@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="container-horizontal">
+        <div id="welcome" class="container-vertical">
+            <div class="centered">
+                <h2 class="header-text">Gate and Upper Helmsley</h2>
+                <p>Welcome to the Gate and Upper Helmsley Parish Council website.</p>
+            </div>
+            <div class="centered">
+                <h3 class="header-small">Upcoming Events</h3>
+            </div>
+            {% for event in events %}
+            <div class="event centered">
+                <h4>{{event.name}}</h4>
+                {% if event.description %}
+                <p>{{event.description}}</p>
+                {% endif %}
+                <p>Where: {{event.location}}</p>
+                <p>{{event.when.time.isoformat}} on {{event.when.date}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div id="splash-image-container">
+            {% load static %}
+            <img class="splash" src="{% static 'img/splash.png' %}"/>
+        </div>
+    </div>
+{% endblock %}

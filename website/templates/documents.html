@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block body %}
+    <h2 class="header-text">Documents</h2>
+    <div class="container-vertical">
+        <div class="container-horizontal centered">
+            <label class="form-label" for="document_type">Document Type</label>
+            <form id="document_type_form" name="document_type_form" action="./">
+                <select class="dropdown" name="document_type">
+                    <option disabled selected value>-- Select a Document Type --</option>
+                    {% for type in document_types %}
+                    <option value="{{type.code}}">{{type.description}}</option>
+                    {% endfor %}
+                </select>
+                <input class="dark-button" type="submit" value="🔍"/>
+            </form>
+        </div>
+        {% if documents %}
+        <div class="centered">
+            <table class="basic-table">
+                <tr>
+                    <th>Document</th>
+                    <th>Date Uploaded</th>
+                </tr>
+                {% for document in documents %}
+                <tr>
+                    <td>
+                        <a href="{{document.file}}" download>
+                            {{document.description}}
+                        </a>
+                    </td>
+                    <td>{{document.uploaded.date}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% else %}
+        <div class="centered">
+            <p>No documents available for the selected type.</p>
+        </div>
+    </div>
+    {% endif %}
+    <script>
+        var URLParams = new URLSearchParams(window.location.search);
+        var document_type = URLParams.get("document_type");
+        document
+            .getElementById("document_type_form")
+            .querySelector(`option[value='${document_type}']`).selected = true;
+    </script>
+{% endblock %}

@@ -1,22 +1,64 @@
 from django.http import HttpRequest
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from . import models
 
 # Create your views here.
 def index(request: HttpRequest):
-    events = models.Event.objects.all()
-    return render(request, 'home.dj.html', {'events': list(events.values())})
+    if request.method == "GET":
+        events = models.Event.objects.all()
+        return render(
+            request,
+            'home.html',
+            {
+                'events': events
+            }
+        )
+    else:
+        return HttpResponseRedirect("../")
 
 def councillors(request: HttpRequest):
-    councillors = models.Person.objects.filter(councillor=True)
-    return render(request, 'councillors.dj.html', {'councillors': list(councillors.values())})
+    if request.method == "GET":
+        councillors = models.Person.objects.filter(councillor=True)
+        return render(
+            request,
+            'councillors.html',
+            {
+                'councillors': councillors
+            }
+        )
+    else:
+        return HttpResponseRedirect("../")
 
 def documents(request: HttpRequest):
-    documents = models.Document.objects.filter(hide=False)
-    return render(request, 'documents.dj.html', {'documents': list(documents.values())})
+    if request.method == "GET":
+        document_types = models.DocumentType.objects.all()
+        documents = models.Document.objects.filter(
+            documenttype__code=request.GET.get("document_type"),
+            hide=False
+        )
+        
+        return render(
+            request,
+            'documents.html',
+            {
+                'document_types': document_types,
+                'documents': documents,
+            }
+        )
+    else:
+        return HttpResponseRedirect("../")
 
 def contact(request: HttpRequest):
-    contacts = models.Person.objects.filter(contact=True)
-    return render(request, 'contact.dj.html', {'contacts': list(contacts.values())})
+    if request.method == "GET":
+        contacts = models.Person.objects.filter(contact=True)
+        return render(
+            request, 
+            'contact.html', 
+            {
+                'contacts': contacts
+            }
+        )
+    else:
+        return HttpResponseRedirect("../")

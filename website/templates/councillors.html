@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block body %}
+    <h2 class="header-text">Councillors</h2>
+    <table class="basic-table">
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Email</th>
+            <th>Telephone</th>
+        </tr>
+        {% for councillor in councillors %}
+        <tr>
+            <td>{{councillor.name}}</td>
+            <td>{{councillor.position}}</td>
+            <td>{{councillor.email}}</td>
+            <td>{{councillor.telephone}}</td>
+        </tr>
+        {% endfor %}
+    </table>    
+{% endblock %}
